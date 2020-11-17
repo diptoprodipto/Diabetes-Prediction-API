@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from flask_cors import cross_origin
 import mysql.connector
 
 app = Flask(__name__)
@@ -8,12 +7,10 @@ conn = mysql.connector.connect(host="localhost",user="root",password="",database
 cursor = conn.cursor()
 
 @app.route("/")
-@cross_origin()
 def register():
     return render_template("register.html")
 
 @app.route("/home")
-@cross_origin()
 def home():
     return render_template("home.html")
 
