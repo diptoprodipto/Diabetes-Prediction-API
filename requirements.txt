@@ -14,3 +14,7 @@ PyMySQL==0.9.3
 pytz==2019.3
 six==1.13.0
 Werkzeug==0.16.0
+mysql-connector-python==1.0.12
+Flask-SQLAlchemy==1.0
+SQLAlchemy==0.8.2
+MySQL-python==1.2.4
