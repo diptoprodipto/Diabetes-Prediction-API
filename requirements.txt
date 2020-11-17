@@ -1,4 +1,4 @@
-Gunicorn==20.0.4
+gunicorn==19.9.0
 Babel==2.7.0
 Click==7.0
 Flask==1.1.1
