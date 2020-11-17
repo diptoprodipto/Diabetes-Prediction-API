@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template
-import mysql.connector
+#import mysql.connector
 
 app = Flask(__name__)
 
-conn = mysql.connector.connect(host="localhost",user="root",password="",database="flasktest")
-cursor = conn.cursor()
+#conn = mysql.connector.connect(host="localhost",user="root",password="",database="flasktest")
+#cursor = conn.cursor()
 
 @app.route("/")
 def register():
@@ -16,11 +16,11 @@ def home():
 
 @app.route("/add_user", methods=['POST','GET'])
 def add_user():
-    name = request.form.get('uname')
-    password = request.form.get('upassword')
+    #name = request.form.get('uname')
+    #password = request.form.get('upassword')
     
-    cursor.execute("INSERT INTO users(name,password) VALUES('{}','{}')".format(name,password))
-    conn.commit()
+   # cursor.execute("INSERT INTO users(name,password) VALUES('{}','{}')".format(name,password))
+    #conn.commit()
     return "User inserted"
 
 if __name__ == "__main__":
