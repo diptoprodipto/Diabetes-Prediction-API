@@ -3,7 +3,7 @@ import mysql.connector
 
 app = Flask(__name__)
 
-conn = mysql.connector.connect(host="remotemysql.com",user="Rliijh7Lll",password="MMnpw6UqWX",database="Rliijh7Lll")
+conn = mysql.connector.connect(host="sql304.epizy.com",user="epiz_26009097",password="R1oBIOsaBB0Re",database="epiz_26009097_flaskapp")
 cursor = conn.cursor()
 
 @app.route("/")
