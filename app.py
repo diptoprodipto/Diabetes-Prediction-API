@@ -65,9 +65,9 @@ def predict():
         return render_template('index.html',prediction_text="{}".format(ans))
         """
         if output == 0:
-            return jsonify({prediction:[{"label": 0}]})
+            return jsonify({"label": 0})
         else:
-            return jsonify({prediction:[{"label": 1}]})
+            return jsonify({"label": 1})
 
     return render_template("index.html")
 
