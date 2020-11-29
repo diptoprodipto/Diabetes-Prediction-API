@@ -1,2 +1,2 @@
-# flasktest
-Flask app
+# FlaskAPI
+This is a Flask REST API.
