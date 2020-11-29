@@ -8,6 +8,10 @@ import pandas as pd
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
 
+@app.route("/")
+@app.route("/home")
+def home():
+    return "<h1>Flask Machine Learning based Diabetes prediction API</h1>"
 
 @app.route("/predict", methods=["GET", "POST"])
 @cross_origin()
@@ -49,7 +53,6 @@ def predict():
          
     return response
 
-        
 
 if __name__ == "__main__":
     app.run(debug=True)
