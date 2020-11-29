@@ -1,11 +1,12 @@
 
 from flask import Flask, request, render_template, jsonify
-from flask_cors import cross_origin
+from flask_cors import CORS, cross_origin
 import sklearn
 import pickle
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/")
