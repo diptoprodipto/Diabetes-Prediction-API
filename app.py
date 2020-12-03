@@ -1,6 +1,8 @@
 
 from flask import Flask, request, render_template, jsonify
 import pickle
+import pandas as pd
+import sklearn
 
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
