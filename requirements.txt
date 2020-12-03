@@ -12,9 +12,3 @@ Pillow==6.2.1
 pytz==2019.3
 six==1.13.0
 Werkzeug==0.16.0
-numpy>=1.9.2
-scipy>=0.15.1
-scikit-learn>=0.18
-matplotlib>=1.4.3
-pandas>=0.19
-Flask-Cors==3.0.8
