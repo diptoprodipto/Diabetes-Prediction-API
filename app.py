@@ -15,7 +15,7 @@ def home():
     return "<h1>Flask Machine Learning based Diabetes prediction API</h1>"
 
 @app.route("/predict", methods=["GET", "POST"])
-@cross_origin()
+#@cross_origin()
 def predict():
 
     pregnancy = float(request.form["pregnancy"])
@@ -51,6 +51,8 @@ def predict():
         response = jsonify({'label': 0})
     else:
         response = jsonify({'label': 1})
+        
+    response.headers.add('Access-Control-Allow-Origin', '*')
          
     return response
 
