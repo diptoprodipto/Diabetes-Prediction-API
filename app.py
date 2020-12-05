@@ -3,8 +3,10 @@ from flask import Flask, request, render_template, jsonify
 import pickle
 import pandas as pd
 import sklearn
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/")
@@ -14,7 +16,7 @@ def home():
 
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
-
+    """
     pregnancy = float(request.form["pregnancy"])
 
     glucose = int(request.form['glucose'])
@@ -41,6 +43,17 @@ def predict():
         pedigree,
         age
     ]])
+    """
+    
+    prediction = model.predict([[float(request.args['pregnancy']),
+                            float(request.args['glucose']),
+                            float(request.args['bloodpressure']),
+                            float(request.args['thickness']),
+                            float(request.args['insulin']),
+                            float(request.args['bmi']),
+                            float(request.args['pedigree']),
+                            float(request.args['age'])
+                           ]])
 
     output = round(prediction[0])
     
