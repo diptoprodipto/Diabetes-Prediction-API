@@ -1,4 +1,4 @@
-
+"""
 from flask import Flask, request, render_template, jsonify
 import pickle
 import pandas as pd
@@ -52,6 +52,40 @@ def predict():
     response.headers.add('Access-Control-Allow-Origin', '*')
          
     return response
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+"""
+
+import flask
+from flask import request, render_template, jsonify
+from flask_cors import CORS
+import pickle
+
+app = flask.Flask(__name__)
+CORS(app)
+
+model = pickle.load(open("model.pkl", "rb"))
+
+@app.route('/')
+def home():
+    return '<h1>API is working.. </h1>'
+
+
+@app.route('/predict',methods=['GET','POST'])
+def predict():
+    prediction = model.predict([[float(request.args['pregnancy']),
+                            float(request.args['glucose']),
+                            float(request.args['bloodpressure']),
+                            float(request.args['thickness']),
+                            float(request.args['insulin']),
+                            float(request.args['bmi']),
+                            float(request.args['pedigree']),
+                            float(request.args['age'])
+                           ]])
+         
+    return str(round(prediction[0]))
 
 
 if __name__ == "__main__":
