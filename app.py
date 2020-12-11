@@ -66,6 +66,26 @@ def predict():
          
     return response
 
+@app.route("/androidpredict", methods=["GET", "POST"])
+def androidpredict():
+    
+    prediction = model.predict([[float(request.form['pregnancy']),
+                            float(request.form['glucose']),
+                            float(request.form['bloodpressure']),
+                            float(request.form['thickness']),
+                            float(request.form['insulin']),
+                            float(request.form['bmi']),
+                            float(request.form['pedigree']),
+                            float(request.form['age'])
+                           ]])
+
+    output = round(prediction[0])
+    
+    if output == 0:
+        return "No"
+    else:
+        return "Yes"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
