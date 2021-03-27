@@ -47,8 +47,8 @@ def predict():
     
     prediction = model.predict([[float(request.args['age']),
                             float(request.args['gender']),
-                            float(request.args['Polyuria']),
-                            float(request.args['Polydipsia']),
+                            float(request.args['polyuria']),
+                            float(request.args['polydipsia']),
                             float(request.args['sudden']),
                             float(request.args['weakness']),
                             float(request.args['polyphagia']),
