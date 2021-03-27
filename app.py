@@ -45,14 +45,21 @@ def predict():
     ]])
     """
     
-    prediction = model.predict([[float(request.args['pregnancy']),
-                            float(request.args['glucose']),
-                            float(request.args['bloodpressure']),
-                            float(request.args['thickness']),
-                            float(request.args['insulin']),
-                            float(request.args['bmi']),
-                            float(request.args['pedigree']),
-                            float(request.args['age'])
+    prediction = model.predict([[float(request.args['age']),
+                            float(request.args['gender']),
+                            float(request.args['Polyuria']),
+                            float(request.args['Polydipsia']),
+                            float(request.args['sudden']),
+                            float(request.args['weakness']),
+                            float(request.args['polyphagia']),
+                            float(request.args['visual']),
+                            float(request.args['itching']),
+                            float(request.args['irritability']),
+                            float(request.args['healing']),
+                            float(request.args['partial']),
+                            float(request.args['muscle']),
+                            float(request.args['alopecia']),
+                            float(request.args['obesity'])
                            ]])
 
     output = round(prediction[0])
