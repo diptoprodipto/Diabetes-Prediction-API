@@ -49,17 +49,12 @@ def predict():
                             float(request.args['gender']),
                             float(request.args['polyuria']),
                             float(request.args['polydipsia']),
-                            float(request.args['sudden']),
                             float(request.args['weakness']),
-                            float(request.args['polyphagia']),
                             float(request.args['visual']),
-                            float(request.args['itching']),
-                            float(request.args['irritability']),
                             float(request.args['healing']),
                             float(request.args['partial']),
                             float(request.args['muscle']),
-                            float(request.args['alopecia']),
-                            float(request.args['obesity'])
+                            float(request.args['alopecia'])
                            ]])
 
     output = round(prediction[0])
