@@ -71,14 +71,16 @@ def predict():
 @app.route("/androidpredict", methods=["GET", "POST"])
 def androidpredict():
     
-    prediction = model.predict([[float(request.form['pregnancy']),
-                            float(request.form['glucose']),
-                            float(request.form['bloodpressure']),
-                            float(request.form['thickness']),
-                            float(request.form['insulin']),
-                            float(request.form['bmi']),
-                            float(request.form['pedigree']),
-                            float(request.form['age'])
+    prediction = model.predict([[float(request.form['age']),
+                            float(request.form['gender']),
+                            float(request.form['polyuria']),
+                            float(request.form['polydipsia']),
+                            float(request.form['weakness']),
+                            float(request.form['visual']),
+                            float(request.form['healing']),
+                            float(request.form['partial']),
+                            float(request.form['muscle']),
+                            float(request.form['alopecia'])
                            ]])
 
     output = round(prediction[0])
