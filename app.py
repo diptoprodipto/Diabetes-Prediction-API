@@ -49,11 +49,11 @@ def predict():
                             float(request.args['gender']),
                             float(request.args['polyuria']),
                             float(request.args['polydipsia']),
-                            float(request.args['weakness']),
-                            float(request.args['visual']),
-                            float(request.args['healing']),
+                            float(request.args['sudden']),
+                            float(request.args['itching']),
+                            float(request.args['irritability']),
+                            float(request.args['delayed']),
                             float(request.args['partial']),
-                            float(request.args['muscle']),
                             float(request.args['alopecia'])
                            ]])
 
@@ -75,11 +75,11 @@ def androidpredict():
                             float(request.form['gender']),
                             float(request.form['polyuria']),
                             float(request.form['polydipsia']),
-                            float(request.form['weakness']),
-                            float(request.form['visual']),
-                            float(request.form['healing']),
+                            float(request.form['sudden']),
+                            float(request.form['itching']),
+                            float(request.form['irritability']),
+                            float(request.form['delayed']),
                             float(request.form['partial']),
-                            float(request.form['muscle']),
                             float(request.form['alopecia'])
                            ]])
 
