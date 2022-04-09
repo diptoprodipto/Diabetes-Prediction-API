@@ -16,6 +16,7 @@ def home():
         "about": "This is a Flask REST API for predicting diabetes",
         "written_by": "Prodipto Roy Dipto",
         "method": "GET/POST",
+        "url": "base_url/predict",
         "query_params": {
             "age": "number",
             "gender": "1/0",
